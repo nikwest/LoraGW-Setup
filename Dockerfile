@@ -57,8 +57,12 @@ WORKDIR /opt/loragw/dev/packet_forwarder/mp_pkt_fwd
 RUN make && \
     cp mp_pkt_fwd /opt/loragw/mp_pkt_fwd
 
-COPY oled.py monitor-ws2812.py monitor-gpio.py start.sh /opt/loragw/
+COPY oled.py monitor-ws2812.py monitor-gpio.py start.sh set_config.py /opt/loragw/
 COPY loragw.service monitor.service oled.service /etc/systemd/system/
+
+WORKDIR /opt/loragw
+RUN python set_config.py
+
 
 RUN ln -s /opt/loragw/monitor-ws2812.py /opt/loragw/monitor.py && \
     systemctl enable /etc/systemd/system/loragw.service && \
