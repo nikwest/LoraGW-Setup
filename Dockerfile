@@ -1,4 +1,4 @@
-FROM resin/rpi-raspbian:stretch
+FROM resin/rpi-raspbian
 
 ENV INITSYSTEM on
 
