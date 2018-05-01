@@ -1,4 +1,4 @@
-FROM resin/rpi-raspbian:buster
+FROM resin/rpi-raspbian:stretch
 
 ENV INITSYSTEM on
 
