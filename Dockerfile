@@ -61,7 +61,7 @@ COPY oled.py monitor-ws2812.py monitor-gpio.py start.sh set_config.py /opt/lorag
 COPY loragw.service monitor.service oled.service /etc/systemd/system/
 
 WORKDIR /opt/loragw
-RUN python set_config.py
+RUN source /etc/docker.env && python set_config.py
 
 
 RUN ln -s /opt/loragw/monitor-ws2812.py /opt/loragw/monitor.py && \
