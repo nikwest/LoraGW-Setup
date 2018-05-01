@@ -1,4 +1,4 @@
-FROM resin/rpi-raspbian-node
+FROM resin/rpi-raspbian:buster
 
 ENV INITSYSTEM on
 
